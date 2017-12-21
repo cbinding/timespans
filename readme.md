@@ -1,8 +1,8 @@
 # Timespans #
----
+
 
 ## Background ##
----
+
 Archaeological dataset records often give a textual expression of dating rather than absolute numeric years for the dating of artefacts. These textual data values can be in a variety of formats, sometimes expressed in different languages. There can be prefixes present such as 'Circa', 'Early', 'Mid', 'Late' - and suffixes such as 'A.D.', 'B.C.', B.P.' that may influence the dates intended. This can present a data integration issue, as illustrated in the table below:
 
 Type | Language | Input | Min | Max
@@ -37,7 +37,7 @@ Named periods (from lookup) | English | Georgian | 1714 | 1837
 Normalising this data can make later search and comparison of the records easier. We can do this by supplementing the original values with additional attributes defining the start and end dates of the timespan. This application attempts to match a set of textual values representing timespans to a number of known patterns, and from there to derive the intended start/end dates of the timespan. For some cases the start/end dates are present and can be extracted directly from the textual string, however in most cases a degree of additional processing is required after the initial pattern match is made. The output facilitates the fairer comparison of textual date spans as often expressed in datasets. Due to the wide variety of formats possible (including punctuation and spurious extra text), the matching patterns developed cannot comprehensively cater for every possible free-text variation present, so any remaining records not processed by this initial automated method (start/end years are zero) can be manually reviewed and assigned suitable start/end dates.
 
 ## Issues to note ##
----
+
 The output dates produced are relative to Common Era (CE). Centuries are set to start at year 1 and end at year 100. Prefix modifiers for centuries take the following meaning in this application:
 
 Prefix | Start | End
@@ -70,7 +70,7 @@ The output data format is tab delimited UTF-8 text, this can be easily used with
 The [ISO639-1:2002](https://www.iso.org/iso-639-language-codes.html) language code corresponding to the language of the input data. This hints to the underlying matching process the most appropriate matching patterns to use. The languages with best support so far are English ('en') and Italian ('it') - some matching patterns are present for Welsh ('cy'), German ('de'), French ('fr'), Spanish ('es') and Swedish ('sv') but these are currently comparatively underdeveloped and untested with representative data. If the language parameter is omitted or is not one of the recognised values then it will default to 'en' (English).
 
 ### Examples ###
----
+
 Command: `timelines -i:{inputFileNameWithPath} [-o:{outputFileNameWithPath}] [-l:{languageCode}]` 
 
 #### English examples ####
