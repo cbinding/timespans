@@ -9,30 +9,30 @@ Type | Language | Input | Min | Max
 ---- | -------- | ----- | --- | ---
 Ordinal named or numbered century | English | Early 2nd Century | 101 | 140
 ''| English | Circa Fifth Century BC | -200 | -101
- | Italian | XV secolo d.C. | 1401 | 1500
- | Italian | intorno a VI sec. d.C. | 501 | 600
- | Welsh | pymthegfed ganrif | 1401 | 1500 
- | Welsh | Canol y15fed ganrif | 1430 | 1470
+''| Italian | XV secolo d.C. | 1401 | 1500
+''| Italian | intorno a VI sec. d.C. | 501 | 600
+''| Welsh | pymthegfed ganrif | 1401 | 1500 
+''| Welsh | Canol y15fed ganrif | 1430 | 1470
 Year span |	English	| 1450-1460 | 1450 | 1460
- | English | 1485-86 | 1485 | 1486
+''| English | 1485-86 | 1485 | 1486
 Single year (with tolerance) | English | C. 1485 | 1485 | 1485
- | English | 1540±9 | 1531 | 1549
- | English | AD400+ | 400 | 400
- | English | 400 AD | 400 | 400
+''| English | 1540±9 | 1531 | 1549
+''| English | AD400+ | 400 | 400
+''| English | 400 AD | 400 | 400
 Decade | English | Circa 1860s | 1860 | 1869
- | Italian | intorno al decennio 1910 | 1910 | 1919
- | Welsh | 1930au | 1930 | 1939
-Century span	English	5th – 6th century AD	401	600
- | Italian | VIII-VII secolo a.C. | -800 | -601
- | Welsh | 5ed 6ed ganrif | 401 | 600
+''| Italian | intorno al decennio 1910 | 1910 | 1919
+''| Welsh | 1930au | 1930 | 1939
+Century span | English | 5th – 6th century AD | 401 | 600
+'' | Italian | VIII-VII secolo a.C. | -800 | -601
+'' | Welsh | 5ed 6ed ganrif | 401 | 600
 Month and year | English | July 1855 | 1855 | 1855
- | Italian | Luglio 1855 | 1855 | 1855
- | Welsh | Gorffennaf 1855 | 1855 | 1855
+'' | Italian | Luglio 1855 | 1855 | 1855
+'' | Welsh | Gorffennaf 1855 | 1855 | 1855
 Season and year | English | Summer 1855 | 1855 | 1855
- | Italian | Estate 1855 | 1855 | 1855
- | Welsh | Haf 1855 | 1855 | 1855
+'' | Italian | Estate 1855 | 1855 | 1855
+'' | Welsh | Haf 1855 | 1855 | 1855
 Named periods (from lookup) | English | Georgian | 1714 | 1837
- | English | Victorian | 1837 | 1901
+'' | English | Victorian | 1837 | 1901
 		
 Normalising this data can make later search and comparison of the records easier. We can do this by supplementing the original values with additional attributes defining the start and end dates of the timespan. This application attempts to match a set of textual values representing timespans to a number of known patterns, and from there to derive the intended start/end dates of the timespan. For some cases the start/end dates are present and can be extracted directly from the textual string, however in most cases a degree of additional processing is required after the initial pattern match is made. The output facilitates the fairer comparison of textual date spans as often expressed in datasets. Due to the wide variety of formats possible (including punctuation and spurious extra text), the matching patterns developed cannot comprehensively cater for every possible free-text variation present, so any remaining records not processed by this initial automated method (start/end years are zero) can be manually reviewed and assigned suitable start/end dates.
 
@@ -106,6 +106,7 @@ tra IV e III secolo a.C.
 ```
 
 myoutput.txt: 
+
 Text Value | Min year | Max year
 ---------- | -------- | --------
 140-144 d.C. | 140 | 144
@@ -114,13 +115,6 @@ intorno a VI sec. d.C. | 501 | 600
 tra IV e III secolo a.C. | -400 | -201
 575-400 a.C. | 400 | 575
 
-
-
-
-### TODO ###
-Also test on MONO and document it if it works
-Then put everything onto GitHub with this file as the readme.md
-Then go home...
 
 
 
