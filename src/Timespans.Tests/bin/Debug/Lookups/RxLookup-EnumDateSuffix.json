@@ -1,0 +1,49 @@
+﻿[
+    { "language": "cy", "value": "AD", "pattern": "(?:O\\.?C\\.?|A\\.?D\\.?)" },
+    { "language": "cy", "value": "BC", "pattern": "[BC]\\.?C\\.?" },
+    { "language": "cy", "value": "BP", "pattern": "B\\.?P\\.?" },
+    { "language": "cy", "value": "CE", "pattern": "C\\.?E\\.?" },
+    { "language": "cy", "value": "BCE", "pattern": "B\\.?C\\.?E\\.?" },
+
+    { "language": "de", "value": "AD", "pattern": "(?:n\\.?\\sChr|A\\.?D\\.?)" },
+    { "language": "de", "value": "BC", "pattern": "(?:v\\.?\\sChr|B\\.?C\\.?)" },
+    { "language": "de", "value": "BP", "pattern": "B\\.?P\\.?" },
+    { "language": "de", "value": "CE", "pattern": "C\\.?E\\.?" },
+    { "language": "de", "value": "BCE", "pattern": "B\\.?C\\.?E\\.?" },
+
+    { "language": "en", "value": "AD", "pattern": "A\\.?D\\.?" },
+    { "language": "en", "value": "BC", "pattern": "B\\.?C\\.?" },
+    { "language": "en", "value": "BP", "pattern": "B\\.?P\\.?" },
+    { "language": "en", "value": "CE", "pattern": "C\\.?E\\.?" },
+    { "language": "en", "value": "BCE", "pattern": "B\\.?C\\.?E\\.?" },
+
+    { "language": "es", "value": "AD", "pattern": "A\\.?D\\.?" },
+    { "language": "es", "value": "BC", "pattern": "a\\.?C\\.?" },
+    { "language": "es", "value": "BP", "pattern": "B\\.?P\\.?" },
+    { "language": "es", "value": "CE", "pattern": "C\\.?E\\.?" },
+    { "language": "es", "value": "BCE", "pattern": "B\\.?C\\.?E\\.?" },
+
+    { "language": "fr", "value": "AD", "pattern": "(?:J\\.?C\\.?|A\\.?D\\.?)" },
+    { "language": "fr", "value": "BC", "pattern": "(?:J\\.?\\-C\\.?|B\\.?C\\.?)" },
+    { "language": "fr", "value": "BP", "pattern": "B\\.?P\\.?" },
+    { "language": "fr", "value": "CE", "pattern": "C\\.?E\\.?" },
+    { "language": "fr", "value": "BCE", "pattern": "B\\.?C\\.?E\\.?" },
+
+    { "language": "it", "value": "AD", "pattern": "d\\.?C\\.?" }, 
+    { "language": "it", "value": "BC", "pattern": "a\\.?C\\.?" },    
+    { "language": "it", "value": "BP", "pattern": "B\\.?P\\.?" },
+    { "language": "it", "value": "CE", "pattern": "C\\.?E\\.?" },
+    { "language": "it", "value": "BCE", "pattern": "B\\.?C\\.?E\\.?" },
+
+    { "language": "nl", "value": "AD", "pattern": "A\\.?D\\.?" },     
+    { "language": "nl", "value": "BC", "pattern": "(?:v\\.Chr\\.|voor Christus)" },
+    { "language": "nl", "value": "BP", "pattern": "B\\.?P\\.?" },
+    { "language": "nl", "value": "CE", "pattern": "C\\.?E\\.?" },
+    { "language": "nl", "value": "BCE", "pattern": "B\\.?C\\.?E\\.?" },
+    
+    { "language": "sv", "value": "AD", "pattern": "(?:Efter Kristus|e\\.?Kr\\.?|A\\.?D\\.?)" },
+    { "language": "sv", "value": "BC", "pattern": "(?:Fore Kristus|f\\.?Kr\\.?|B\\.?C\\.?)" },
+    { "language": "sv", "value": "BP", "pattern": "B\\.?P\\.?" },
+    { "language": "sv", "value": "CE", "pattern": "(?:(?:Efter\\s)?vår tideräkning|(?:e\\.?)?v\\.?t\\.?|C\\.?E\\.?)" },
+    { "language": "sv", "value": "BCE", "pattern": "(?:Före vår tideräkning|f\\.?v\\.?t\\.?|B\\.?C\\.?E\\.?)" } 
+]
