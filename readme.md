@@ -6,6 +6,7 @@
 Archaeological dataset records often give a textual expression of dating rather than absolute numeric years for the dating of artefacts. These textual data values can be in a variety of formats, sometimes expressed in different languages. There can be prefixes present such as 'Circa', 'Early', 'Mid', 'Late' - and suffixes such as 'A.D.', 'B.C.', B.P.' that may influence the dates intended. This can present a data integration issue, as illustrated in the table below:
 
 Type | Language | Input | Min | Max
+---- | -------- | ----- | --- | ---
 Ordinal named or numbered century | English | Early 2nd Century | 101 | 140
  | English | Circa Fifth Century BC | -200 | -101
  | Italian | XV secolo d.C. | 1401 | 1500
@@ -40,6 +41,7 @@ Normalising this data can make later search and comparison of the records easier
 The output dates produced are relative to Common Era (CE). Centuries are set to start at year 1 and end at year 100. Prefix modifiers for centuries take the following meaning in this application:
 
 Prefix | Start | End
+------ | ----- | ---
 Early | 1 | 40
 Mid | 30 | 70
 Late | 60 | 100
@@ -85,6 +87,7 @@ Early 2nd Century
 myoutput.txt: The output is a tab delimited text file with dates assigned to the timespan values
 
 Text Value | Min year | Max year
+---------- | -------- | --------
 1839-1895 | 1839 | 1895
 1839-75 | 1839 | 1875
 c.1521 | 1521 | 1521
@@ -104,6 +107,7 @@ tra IV e III secolo a.C.
 
 myoutput.txt: 
 Text Value | Min year | Max year
+---------- | -------- | --------
 140-144 d.C. | 140 | 144
 III e lo II secolo a.C. | -300 | -101
 intorno a VI sec. d.C. | 501 | 600
