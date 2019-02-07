@@ -53,8 +53,8 @@ namespace TimespanLib.Rx
                     pattern = String.Concat(
                         START,                       // ^
                         maybe(DateCirca.Pattern(language) + SPACE),  // (?:Vers\s)?
+                        @"les années\s",
                         group(@"\d+0", "decade"),    // (?<decade>\d+0)
-                        @"\'?s",                        // \'?s
                         END                          // $
                     );
                     break;                

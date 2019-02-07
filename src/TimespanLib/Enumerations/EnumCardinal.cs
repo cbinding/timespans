@@ -7,7 +7,8 @@ namespace TimespanLib
 {
     public enum EnumCardinal
     {
-        NONE = 0,
+        NONE = 0, 
+        CARDINAL00 = 0,
         CARDINAL01,
         CARDINAL02,
         CARDINAL03,

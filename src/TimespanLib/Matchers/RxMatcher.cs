@@ -28,7 +28,7 @@ namespace TimespanLib.Rx
         protected internal const string NONWORD = @"\W";
         protected internal const string ANY = @".";
         protected internal const string END = @"$";
-        protected internal const string ROMAN = @"[MDCLXVI]+";
+        protected internal const string ROMAN = @"(?-i)[MDCLXVI]+(?i)";
         protected internal const int PRESENT = 1950; // benchmark point for calculation of BP dates. See https://en.wikipedia.org/wiki/Before_Present
         // However have seen 'present' also refer to 2000 - maybe this would need to be in config file or passed in option to override default??
         
@@ -63,13 +63,13 @@ namespace TimespanLib.Rx
             return oneof(input, name, "?");
         }
 
-        // oneof(new string[]{ "Tom", "Dick", "Harry" }, "name") => "(?<name>Tom|Dick|Harry)"
+        // oneof(new string[]{ "Tom", "Dick", "Harry" }, "groupname") => "(?<groupname>Tom|Dick|Harry)"
         protected internal static string oneof(string[] input, string name = "", string repeat = "")
         {
             return group(String.Join("|", input), name, repeat);
         }
 
-        // group("myinput", "myname", "+") => "(?<myname>myinput)+"
+        // group("pattern", "groupname", "+") => "(?<groupname>pattern)+"
         protected internal static string group(string input, string name = "", string repeat = "")
         {
             input = input.Trim();
@@ -129,6 +129,17 @@ namespace TimespanLib.Rx
                                 yearMin += 60;
                                 yearMax = yearMin + 39;
                                 break;
+                            case EnumDatePrefix.THIRD1:
+                                yearMax = yearMin + 33;
+                                break;
+                            case EnumDatePrefix.THIRD2:
+                                yearMin += 33;
+                                yearMax = yearMin + 33;
+                                break;
+                            case EnumDatePrefix.THIRD3:
+                                yearMin += 66;
+                                yearMax = yearMin + 33;
+                                break;
                             case EnumDatePrefix.QUARTER1:
                                 yearMax = yearMin + 25;
                                 break;
@@ -174,6 +185,17 @@ namespace TimespanLib.Rx
                                 yearMin += 60;
                                 yearMax = yearMin + 39;
                                 break;
+                            case EnumDatePrefix.THIRD1:
+                                yearMax = yearMin + 33;
+                                break;
+                            case EnumDatePrefix.THIRD2:
+                                yearMin += 33;
+                                yearMax = yearMin + 33;
+                                break;
+                            case EnumDatePrefix.THIRD3:
+                                yearMin += 66;
+                                yearMax = yearMin + 33;
+                                break;
                             case EnumDatePrefix.QUARTER1:
                                 yearMax = yearMin + 25;
                                 break;
@@ -218,6 +240,17 @@ namespace TimespanLib.Rx
                             case EnumDatePrefix.LATE:
                                 yearMin += 59;
                                 yearMax = yearMin + 40;
+                                break;
+                            case EnumDatePrefix.THIRD1:
+                                yearMax = yearMin + 33;
+                                break;
+                            case EnumDatePrefix.THIRD2:
+                                yearMin += 33;
+                                yearMax = yearMin + 33;
+                                break;
+                            case EnumDatePrefix.THIRD3:
+                                yearMin += 66;
+                                yearMax = yearMin + 33;
                                 break;
                             case EnumDatePrefix.QUARTER1:
                                 yearMax = yearMin + 24;
@@ -278,6 +311,17 @@ namespace TimespanLib.Rx
                                 yearMin += 600;
                                 yearMax = yearMin + 399;
                                 break;
+                            case EnumDatePrefix.THIRD1:
+                                yearMax = yearMin + 333;
+                                break;
+                            case EnumDatePrefix.THIRD2:
+                                yearMin += 333;
+                                yearMax = yearMin + 333;
+                                break;
+                            case EnumDatePrefix.THIRD3:
+                                yearMin += 666;
+                                yearMax = yearMin + 333;
+                                break;
                             case EnumDatePrefix.QUARTER1:
                                 yearMax = yearMin + 250;
                                 break;
@@ -323,6 +367,17 @@ namespace TimespanLib.Rx
                                 yearMin += 600;
                                 yearMax = yearMin + 399;
                                 break;
+                            case EnumDatePrefix.THIRD1:
+                                yearMax = yearMin + 333;
+                                break;
+                            case EnumDatePrefix.THIRD2:
+                                yearMin += 333;
+                                yearMax = yearMin + 333;
+                                break;
+                            case EnumDatePrefix.THIRD3:
+                                yearMin += 666;
+                                yearMax = yearMin + 333;
+                                break;
                             case EnumDatePrefix.QUARTER1:
                                 yearMax = yearMin + 250;
                                 break;
@@ -367,6 +422,17 @@ namespace TimespanLib.Rx
                             case EnumDatePrefix.LATE:
                                 yearMin += 599;
                                 yearMax = yearMin + 400;
+                                break;
+                            case EnumDatePrefix.THIRD1:
+                                yearMax = yearMin + 333;
+                                break;
+                            case EnumDatePrefix.THIRD2:
+                                yearMin += 333;
+                                yearMax = yearMin + 333;
+                                break;
+                            case EnumDatePrefix.THIRD3:
+                                yearMin += 666;
+                                yearMax = yearMin + 333;
                                 break;
                             case EnumDatePrefix.QUARTER1:
                                 yearMax = yearMin + 249;

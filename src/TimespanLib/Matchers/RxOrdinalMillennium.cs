@@ -25,6 +25,18 @@ namespace TimespanLib.Rx
                         END
                     );
                     break;
+                case EnumLanguage.FR:
+                    pattern = String.Concat(
+                       START,
+                       maybe(DateCirca.Pattern(language) + SPACE),
+                       maybe(oneof(Lookup<EnumDatePrefix>.Patterns(language), "prefix") + SPACE),
+                       oneof(Lookup<EnumOrdinal>.Patterns(language), "ordinal"),
+                       SPACE,
+                       "millénaire",
+                       maybe(SPACE + oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix")),
+                       END
+                   );
+                    break;
                 case EnumLanguage.IT:
                     pattern = String.Concat(
                        START,                                               // ^

@@ -55,6 +55,18 @@ namespace TimespanLib.Rx
                         END
                     );
                     break;
+                case EnumLanguage.FR:
+                    pattern = String.Concat(
+                       START,
+                       maybe(DateCirca.Pattern(language) + SPACE),
+                       maybe(oneof(Lookup<EnumDatePrefix>.Patterns(language), "prefix") + SPACE),
+                       oneof(Lookup<EnumOrdinal>.Patterns(language), "ordinal"),
+                       SPACE,
+                       @"s(?:\.|iècle)",
+                       maybe(SPACE + oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix")),
+                       END
+                   );
+                    break;
                 case EnumLanguage.IT:
                     pattern = String.Concat(                       
                        START,                                               // ^
@@ -68,6 +80,30 @@ namespace TimespanLib.Rx
                       END                                                  // $
                    );
                     break;
+                case EnumLanguage.NL:
+                    pattern = String.Concat(
+                       START,
+                       maybe(DateCirca.Pattern(language) + SPACE),
+                       maybe(oneof(Lookup<EnumDatePrefix>.Patterns(language), "prefix") + SPACE),
+                       oneof(Lookup<EnumOrdinal>.Patterns(language), "ordinal"),
+                       SPACE,
+                       @"eeuw",
+                       maybe(SPACE + oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix")),
+                       END
+                   );
+                   break;
+                case EnumLanguage.SV:
+                   pattern = String.Concat(
+                      START,
+                      maybe(DateCirca.Pattern(language) + SPACE),
+                      maybe(oneof(Lookup<EnumDatePrefix>.Patterns(language), "prefix") + SPACE),
+                      oneof(Lookup<EnumOrdinal>.Patterns(language), "ordinal"),
+                      SPACE,
+                      @"århundrade",
+                      maybe(SPACE + oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix")),
+                      END
+                  );
+                   break;
                 default:
                     pattern = String.Concat(
                         START,                                               // ^

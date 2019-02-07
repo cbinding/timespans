@@ -31,11 +31,14 @@ namespace TimespanLib.Rx
         private static Lazy<IList<LookupItem<T>>> _items = new Lazy<IList<LookupItem<T>>>(() =>
         {  
             //string thisClassName = System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.Name;            
-            
-            string path = String.Concat("Lookups\\RxLookup-", typeof(T).Name, ".json"); // fileName;
-
+            string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+           
+            string path = System.IO.Path.Combine(baseDir, "Lookups", String.Concat("RxLookup-", typeof(T).Name, ".json"));
            // if (System.Web.HttpContext.Current != null)
                // path = System.Web.HttpContext.Current.Request.MapPath("~\\" + path);
+
+            // TODO: preload ALL patterns under lookups directory, then filter array to use particular subset
+            // then split them into separate files per language e.g. RxLookup-EnumCardinal-en.json etc.
 
             string text = System.IO.File.ReadAllText(path); // needs some error checking here...
             return Newtonsoft.Json.JsonConvert.DeserializeObject<IList<LookupItem<T>>>(text);

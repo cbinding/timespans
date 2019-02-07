@@ -9,28 +9,43 @@ namespace timespans
 {
     class Program
     {
+        static String appName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
+        static Version appVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+        static String appFullName = String.Format("\n{0} v{1}.{2}", appName, appVersion.Major, appVersion.Minor);
+
+        static void showHelp() 
+        {
+            Console.WriteLine("{0}", appName);
+            Console.WriteLine("\t/i: name of input data file");
+            Console.WriteLine("\t/o: name of output data file");
+            Console.WriteLine("\t/d: output delimiter (default=tab)");
+            Console.WriteLine("\t/l: language of input data (default=en)");
+            Console.WriteLine("\t/h: show help");
+            Environment.Exit(0);            
+        }
+        
+
         static void Main(string[] args)
         {            
             // display application name and version in console title
-            String appName = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name;
-            Version appVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-            String appFullName = String.Format("\n{0} v{1}.{2}", appName, appVersion.Major, appVersion.Minor);
+            
             Console.Title = appFullName;
 
-
             // variables to hold values of input args
-            bool showHelp = false;
-            String iFileName = "";     // text input file name with path
+            //bool showHelp = false;
+            Char delimiter = '\t';    // text delimiter character (default = tab)
+            String iFileName = "";    // text input file name with path
             String oFileName = "";    // output file name including path
-            String language = "en";       // language of input data (default 'en')
+            String language = "en";   // language of input data (default 'en')
 
             var p = new Mono.Options.OptionSet() {
                 { "i|in|input=", "name of input data {FILE}", v => { if (v != null) iFileName = v.Trim(); }},
                 { "o|out|output=", "name of output {FILE}", v => { if (v != null) oFileName = v.Trim(); }},
+                { "d|delim|delimiter=", "output delimiter (default=tab) {STRING}", v => { if (v != null) delimiter = v.Trim().First(); }},
                 { "l|lang|language=", "language of input data (default=en) {STRING}", v => { if (v != null) language = v.Trim().ToLower(); }},
-                { "h|?|help",  "show this message and exit", v => showHelp = v != null }
+                { "h|?|help",  v => showHelp() }
             };
-
+            
             // validate input args
             try
             {
@@ -60,7 +75,6 @@ namespace timespans
                 {
                     IYearSpan result = YearSpan.Parse(line, language);
                     
-                    Char delimiter = '\t'; // tab delimited output                   
                     outputLines.Add(String.Format("{1}{0}{2}{0}{3}",
                         delimiter,
                         result.label.Replace(delimiter, ' '),
@@ -88,11 +102,14 @@ namespace timespans
             catch (Exception ex)
             {
                 Console.WriteLine("Error: {0}", ex.Message);
+                Console.WriteLine("Type {0} --help' for more information", appName);
+                Console.WriteLine("Hit any key to exit");
+                Console.ReadKey();    
             }
 
             // don't allow console to disappear automatically
-            Console.WriteLine("Hit any key to exit");
-            Console.ReadKey();            
+            //Console.WriteLine("Hit any key to exit");
+            //Console.ReadKey();            
         }
     }
 }

@@ -28,6 +28,21 @@ namespace TimespanLib.Rx
                    );
                    break;
                 }
+                case EnumLanguage.FR:
+                {
+                    pattern = String.Concat(
+                        START,
+                        maybe(DateCirca.Pattern(language) + SPACE),
+                        maybe(oneof(Lookup<EnumDatePrefix>.Patterns(language), "prefix") + SPACE),
+                        oneof(new string[] { ROMAN, @"\d+" }, "millennium"),
+                        oneof(new string[] { "è?[mr]e", "er", "re", "[eè]", "n?de?", "o" }),
+                        SPACE,
+                        "millénaire",
+                        maybe(SPACE + oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix")),
+                        END
+                    );
+                    break;
+                }
                 case EnumLanguage.IT:
                     // ^(?:(?:C(?:\.|irca)|Intorno al)\s)?(?<millennium>[MCDLXVI]+)\s?(?:esimo|mo|°|º)?\smillennio(?:\s(?<suffix>a\.?C\.?|d\.?C\.?))?$
                     pattern = String.Concat(

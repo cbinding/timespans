@@ -17,7 +17,7 @@ namespace TimespanLib.Rx
 
         private static string GetPattern(EnumLanguage language = EnumLanguage.NONE)
         {    
-            string pattern ="";
+            string pattern = "";
             
             switch (language)
             {
@@ -26,15 +26,36 @@ namespace TimespanLib.Rx
                     pattern = String.Concat(
                         START,
                         maybe(DateCirca.Pattern(language) + SPACE),
+                        maybe(oneof(Lookup<EnumDatePrefix>.Patterns(language), "prefix1") + SPACE),
                         group(@"\d+", "centuryMin"),
                         oneof(new string[] { "af", "a?il", "ydd", "f?ed", "eg", "ain" }),
                         maybe(SPACE + "ganrif"),
                         @"\s*[\s\;\-\/]\s*",
+                        maybe(oneof(Lookup<EnumDatePrefix>.Patterns(language), "prefix2") + SPACE),
                         group(@"\d+", "centuryMax"),
                         oneof(new string[] { "af", "a?il", "ydd", "f?ed", "eg", "ain" }),
                         SPACE,
                         "ganrif",
                         maybe(SPACE + oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix")),
+                        END
+                    );
+                    break;
+                }
+                case EnumLanguage.FR:
+                {
+                    pattern = String.Concat(
+                        START,
+                        maybe(DateCirca.Pattern(language) + SPACE),
+                        maybe(oneof(Lookup<EnumDatePrefix>.Patterns(language), "prefix1") + SPACE),
+                        group(ROMAN, "centuryMin"),                      // (?<centuryMin>[MCDLXVI]+)
+                        oneof(new string[] { "è?[mr]e", "er", "re", "[eè]", "n?de?", "o" }),
+                        maybe(SPACE + @"s(?:\.|iècle)"), 
+                        @"\s*[\;\-\/]\s*",   // separators
+                        maybe(oneof(Lookup<EnumDatePrefix>.Patterns(language), "prefix2") + SPACE),
+                        group(ROMAN, "centuryMax"),                     // (?<centuryMax>[MCDLXVI]+)
+                        oneof(new string[] { "è?[mr]e", "er", "re", "[eè]", "n?de?", "o" }),
+                        maybe(SPACE + @"s(?:\.|iècle)"), 
+                        maybe(SPACE + oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix")),  // (?:\s(?<suffix>a\.?C\.?|d\.?C\.?))?
                         END
                     );
                     break;
@@ -45,11 +66,34 @@ namespace TimespanLib.Rx
                         START,
                         maybe(@"tra(?:\slo)?" + SPACE),
                         maybe(DateCirca.Pattern(language) + SPACE),      // (?:(?:Intorno\sal|circa)\s)?
+                        maybe(oneof(Lookup<EnumDatePrefix>.Patterns(language), "prefix1") + SPACE),
                         group(ROMAN, "centuryMin"),                      // (?<centuryMin>[MCDLXVI]+)
                         oneof(new string[]{@"\s*[e\;\-\/]\s*", @"\sed?\slo\s"}),   // separator
+                        maybe(oneof(Lookup<EnumDatePrefix>.Patterns(language), "prefix2") + SPACE),
                         group(ROMAN, "centuryMax"),                     // (?<centuryMax>[MCDLXVI]+)
                         maybe(SPACE + @"sec(?:\.|olo)"),
                         maybe(SPACE + oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix")),  // (?:\s(?<suffix>a\.?C\.?|d\.?C\.?))?
+                        END
+                    );
+                    break;
+                }
+                case EnumLanguage.NL: 
+                {
+                    pattern = String.Concat(
+                        START,
+                        maybe(@"tussen" + SPACE),
+                        maybe(DateCirca.Pattern(language) + SPACE),
+                        maybe(oneof(Lookup<EnumDatePrefix>.Patterns(language), "prefix1") + SPACE),   //                            
+                        group(@"\d+", "centuryMin"),
+                        oneof(new string[] { "e", "ste", "de" }),
+                        maybe(SPACE + "eeuw"),                         
+                        @"\s*(?:[e\;\-\/]|en)\s*", //separators
+                        maybe(oneof(Lookup<EnumDatePrefix>.Patterns(language), "prefix2") + SPACE),
+                        group(@"\d+", "centuryMax"),
+                        oneof(new string[] { "e", "ste", "de" }),
+                        SPACE,
+                        "eeuw",                                  
+                        maybe(SPACE + oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix")), 
                         END
                     );
                     break;

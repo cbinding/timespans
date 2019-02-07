@@ -19,10 +19,10 @@
     { "language": "es", "value": "AUTUMN", "pattern": "Otoño" },
     { "language": "es", "value": "WINTER", "pattern": "Invierno" },
     
-    { "language": "fr", "value": "SPRING", "pattern": "Printemps" },
-    { "language": "fr", "value": "SUMMER", "pattern": "Été" },
-    { "language": "fr", "value": "AUTUMN", "pattern": "L\\'automne" },
-    { "language": "fr", "value": "WINTER", "pattern": "Hiver" },
+    { "language": "fr", "value": "SPRING", "pattern": "printemps" },
+    { "language": "fr", "value": "SUMMER", "pattern": "été" },
+    { "language": "fr", "value": "AUTUMN", "pattern": "automne" },
+    { "language": "fr", "value": "WINTER", "pattern": "hiver" },
 
     { "language": "it", "value": "SPRING", "pattern": "Primavera" },
     { "language": "it", "value": "SUMMER", "pattern": "Estate" },
@@ -37,6 +37,6 @@
     { "language": "sv", "value": "SPRING", "pattern": "Vår" },
     { "language": "sv", "value": "SUMMER", "pattern": "Sommar" },
     { "language": "sv", "value": "AUTUMN", "pattern": "Höst" },
-    { "language": "sv", "value": "WINTER", "pattern": "Vinter" }
+    { "language": "sv", "value": "WINTER", "pattern": "Vintern\\?" }
 ]
  

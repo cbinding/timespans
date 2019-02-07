@@ -11,10 +11,10 @@ namespace TimespanLib.Rx
     {          
         private static string Pattern(EnumLanguage language = EnumLanguage.NONE, string groupname = "")           
         {
-            // ^(?<season>Frühling|Sommer|Herbst|Winter)\s(?<year>\d+)$
+            // ^(?<season>Spring|Summer|Autumn|(?:Winter|Fall))\s(?<year>\d+)$
             string pattern = String.Concat(
                 START,                              // ^
-                oneof(Lookup<EnumSeason>.Patterns(language), "season"), // (?<season>Frühling|Sommer|Herbst|Winter)
+                oneof(Lookup<EnumSeason>.Patterns(language), "season"), // builds: (?<season>Spring|Summer|Autumn|(?:Winter|Fall))
                 SPACE,                              // \s
                 group(@"\d+", "year"),              // (?<year>\d+)
                 END                                 // $

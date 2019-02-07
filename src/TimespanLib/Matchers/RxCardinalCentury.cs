@@ -86,9 +86,9 @@ namespace TimespanLib.Rx
                             maybe(DateCirca.Pattern(language) + SPACE),
                             maybe(oneof(Lookup<EnumDatePrefix>.Patterns(language), "prefix") + SPACE),
                             oneof(new string[]{ROMAN, @"\d+"},"century"),
-                            maybe(oneof(new string[]{"e", "eme"})),
+                            oneof(new string[] { "è?[mr]e", "er", "re", "[eè]", "n?de?", "o" }),
                             SPACE,
-                            "siècle",
+                            @"s(?:\.|iècle)",
                             maybe(SPACE + oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix")),
                             END
                         );
@@ -110,6 +110,21 @@ namespace TimespanLib.Rx
                         );
                         break;
                     }
+                case EnumLanguage.NL:
+                    {
+                        pattern = String.Concat( 
+                            START,                                     
+                            maybe(DateCirca.Pattern(language) + SPACE),
+                            maybe(oneof(Lookup<EnumDatePrefix>.Patterns(language), "prefix") + SPACE),                             
+                            group(@"\d+", "century"),                             
+                            oneof(new string[] { "e", "ste", "de" }),
+                            SPACE,
+                            "eeuw",                                
+                            maybe(SPACE + oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix")),
+                            END
+                        );
+                        break;
+                    }
                 case EnumLanguage.SV:
                     {
                         // 1700-talet | 18:e århundradet | 18:e seklet | 1700-tal
@@ -120,7 +135,7 @@ namespace TimespanLib.Rx
                             oneof(new string[] {
                                 String.Concat(
                                     group(@"\d+", "century"),
-                                    @":e",
+                                    oneof(new string[] { ":a", ":e" }),
                                     SPACE,
                                     oneof(new string[] { "århundradet", "seklet" })
                                 ),

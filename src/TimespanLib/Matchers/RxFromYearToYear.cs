@@ -28,11 +28,52 @@ namespace TimespanLib.Rx
                         START,                                                  // ^
                         maybe(oneof(new string[]{"tra lo", "in"}) + SPACE),     // (?:(?:tra lo|in)\s)?
                         maybe(DateCirca.Pattern(language) + SPACE),             // (?:(?:Intorno\sal|circa)\s)?
-                        group(@"\d+", "yearMin"),                   // (?<yearMin>\d{3,})
+
+                         oneof(new string[]{
+                            String.Concat(
+                                maybe(oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix1")),
+                                maybe(SPACE),
+                                group(@"\d+", "yearMin") 
+                            ),
+                            String.Concat(                               
+                                group(@"\d+", "yearMin"),
+                                maybe(SPACE),
+                                maybe(oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix1"))
+                            )
+                       }),
                         oneof(new string[] { @"\s*[\;\-\/]\s*", @"\sed?\slo\s" }),   // separator
-                        group(@"\d+", "yearMax"),                   // (?<yearMax>\d{3,})
-                        maybe(SPACE + oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix")),  // (?:\s(?<suffix>a\.?C\.?|d\.?C\.?))?
-                        END                                                     // $
+
+                        oneof(new string[]{
+                            String.Concat(
+                                maybe(oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix2")),
+                                maybe(SPACE),
+                                group(@"\d+", "yearMax") 
+                            ),
+                            String.Concat(                               
+                                group(@"\d+", "yearMax"),
+                                maybe(SPACE),
+                                maybe(oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix2"))
+                            ) 
+                       }),
+                       END                                                     // $
+                    );
+                    break;
+                }
+                case EnumLanguage.NL:
+                {
+                    pattern = String.Concat(
+                        START,
+                        maybe(@"tussen" + SPACE), // "between"
+                        maybe(DateCirca.Pattern(language) + maybe(SPACE)),
+                        group(@"\d+", "yearMin"),
+                        maybe(SPACE),
+                        maybe(oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix1")),
+                        @"\s*(?:[\;\-\/]|en)\s*", // separators
+                        maybe(DateCirca.Pattern(language) + maybe(SPACE)),
+                        group(@"\d+", "yearMax"),
+                        maybe(SPACE),
+                        maybe(oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix2")),
+                        END
                     );
                     break;
                 }

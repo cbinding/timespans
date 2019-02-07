@@ -7,7 +7,8 @@ namespace TimespanLib
 {
     public enum EnumOrdinal
     {
-        NONE = 0,
+        NONE = 0, 
+        ORDINAL00 = 0,
         ORDINAL01,
         ORDINAL02,
         ORDINAL03,

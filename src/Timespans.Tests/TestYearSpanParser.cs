@@ -450,7 +450,14 @@ namespace TimespanLib
             compare(input, expected, EnumLanguage.EN);
         }
 
-
+        [TestMethod]
+        public void Test_FR()
+        {
+            string input = @"vers le IIe siècle av. J.-C";
+            IYearSpan expected = new YearSpan(-200, -101, input, "fr");
+            compare(input, expected, EnumLanguage.FR);
+        }
+        
         [TestMethod]
         public void TestArrayOfInput()
         {

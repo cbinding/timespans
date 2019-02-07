@@ -32,7 +32,7 @@ namespace TimespanLib.Rx
         private static string[] patterns_fr = 
         {
             @"C(?:\.|irca)",            // C. | Circa
-            @"Vers\s"
+            @"(?:Vers le|vers)"
         };
         private static string[] patterns_it = 
         {

@@ -96,7 +96,7 @@
     { "language": "en", "value": "CARDINAL31", "pattern": "thirty[\\-\\s]one" },
       
 
-    { "language": "es", "value": "CARDINAL01", "pattern": "un(?:o|a)?" },    
+    { "language": "es", "value": "CARDINAL01", "pattern": "un[oa]?" },    
     { "language": "es", "value": "CARDINAL02", "pattern": "dos" },        
     { "language": "es", "value": "CARDINAL03", "pattern": "tres" },        
     { "language": "es", "value": "CARDINAL04", "pattern": "cuatro" },   
@@ -128,6 +128,7 @@
     { "language": "es", "value": "CARDINAL30", "pattern": "treinta" },       
     { "language": "es", "value": "CARDINAL31", "pattern": "treinta y uno" }, 
 
+    { "language": "fr", "value": "CARDINAL00", "pattern": "zéro" },
     { "language": "fr", "value": "CARDINAL01", "pattern": "une?" },    
     { "language": "fr", "value": "CARDINAL02", "pattern": "deux" },         
     { "language": "fr", "value": "CARDINAL03", "pattern": "trois" },       
@@ -148,7 +149,7 @@
     { "language": "fr", "value": "CARDINAL18", "pattern": "dix\\-huit" },   
     { "language": "fr", "value": "CARDINAL19", "pattern": "dix\\-neuf" },    
     { "language": "fr", "value": "CARDINAL20", "pattern": "vingt" },         
-    { "language": "fr", "value": "CARDINAL21", "pattern": "vingt\\-et\\-un" },
+    { "language": "fr", "value": "CARDINAL21", "pattern": "vingt et un" },
     { "language": "fr", "value": "CARDINAL22", "pattern": "vingt\\-deux" },  
     { "language": "fr", "value": "CARDINAL23", "pattern": "vingt\\-trois" },  
     { "language": "fr", "value": "CARDINAL24", "pattern": "vingt\\-quatre" },  
@@ -158,7 +159,7 @@
     { "language": "fr", "value": "CARDINAL28", "pattern": "vingt\\-huit" },  
     { "language": "fr", "value": "CARDINAL29", "pattern": "vingt\\-neuf" },   
     { "language": "fr", "value": "CARDINAL30", "pattern": "trente" },
-    { "language": "fr", "value": "CARDINAL31", "pattern": "trent\\-et\\-un" },
+    { "language": "fr", "value": "CARDINAL31", "pattern": "trente et un" },
     
     { "language": "it", "value": "CARDINAL01", "pattern": "un[oa]" }, 
     { "language": "it", "value": "CARDINAL02", "pattern": "due" },    
