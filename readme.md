@@ -113,7 +113,7 @@ myoutput.txt:
 | III e lo II secolo a.C. | -300 | -101 |
 | intorno a VI sec. d.C. | 501 | 600 |
 | tra IV e III secolo a.C. | -400 | -201 |
-| 575-400 a.C. | 400 | 575 |
+| 575-400 a.C. | -575 | -400 |
 
 
 
