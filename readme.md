@@ -94,7 +94,7 @@ myoutput.txt: The output is a tab delimited text file with dates assigned to the
 | Early 2nd Century | 101 | 140 |
 
 #### Italian examples: ####
-Command: `timelines -i:myinput.txt -o:myoutput.txt -l:it`
+Command: `timespans -i:myinput.txt -o:myoutput.txt -l:it`
 
 myinput.txt: 
 ```
