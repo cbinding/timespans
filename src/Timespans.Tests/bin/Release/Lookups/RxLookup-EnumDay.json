@@ -1,0 +1,65 @@
+﻿[
+    { "language": "cy", "type": "DAY", "value": "MON", "pattern": "(?:(?:Dd?|n)ydd\\s)?Llun" },
+    { "language": "cy", "type": "DAY", "value": "TUE", "pattern": "(?:(?:Dd?|n)ydd\\s)?[MF]awrth" },
+    { "language": "cy", "type": "DAY", "value": "WED", "pattern": "(?:(?:Dd?|n)ydd\\s)?[MF]ercher" },
+    { "language": "cy", "type": "DAY", "value": "THU", "pattern": "(?:(?:Dd?|n)ydd\\s)?Iau" },
+    { "language": "cy", "type": "DAY", "value": "FRI", "pattern": "(?:(?:Dd?|n)ydd\\s)?(?:G|Ng)?wener" },
+    { "language": "cy", "type": "DAY", "value": "SAT", "pattern": "(?:(?:Dd?|n)ydd\\s)?Sadwrn" },
+    { "language": "cy", "type": "DAY", "value": "SUN", "pattern": "(?:(?:Dd?|n)ydd\\s)?Sul" },
+
+    { "language": "de", "type": "DAY", "value": "MON", "pattern": "Mo(?:\\.|ntag)?" },
+    { "language": "de", "type": "DAY", "value": "TUE", "pattern": "Di(?:\\.|enstag)?" },
+    { "language": "de", "type": "DAY", "value": "WED", "pattern": "Mi(?:\\.|ttwoch)?" },
+    { "language": "de", "type": "DAY", "value": "THU", "pattern": "Do(?:\\.|nnerstag)?" },
+    { "language": "de", "type": "DAY", "value": "FRI", "pattern": "Fr(?:\\.|eitag)?" },
+    { "language": "de", "type": "DAY", "value": "SAT", "pattern": "Sa(?:\\.|mstag)?" },
+    { "language": "de", "type": "DAY", "value": "SUN", "pattern": "So(?:\\.|nntag)" },
+
+    { "language": "en", "type": "DAY", "value": "MON", "pattern": "Mon(?:\\.|day)?" },
+    { "language": "en", "type": "DAY", "value": "TUE", "pattern": "Tue(?:\\.|s\\.?|sday)?" },
+    { "language": "en", "type": "DAY", "value": "WED", "pattern": "Wed(?:\\.|nesday)?" },
+    { "language": "en", "type": "DAY", "value": "THU", "pattern": "Thu(?:\\.|r\\.?|sday)?" },
+    { "language": "en", "type": "DAY", "value": "FRI", "pattern": "Fri(?:\\.|day)?" },
+    { "language": "en", "type": "DAY", "value": "SAT", "pattern": "Sat(?:\\.|urday)?" },
+    { "language": "en", "type": "DAY", "value": "SUN", "pattern": "Sun(?:\\.|day)?" },
+
+    { "language": "es", "type": "DAY", "value": "MON", "pattern": "(?:L|Lun|lunes)" },
+    { "language": "es", "type": "DAY", "value": "TUE", "pattern": "(?:M|Mar|martes)" },
+    { "language": "es", "type": "DAY", "value": "WED", "pattern": "(?:X|Mie|miércoles)" },
+    { "language": "es", "type": "DAY", "value": "THU", "pattern": "(?:J|Jue|jueves)" },
+    { "language": "es", "type": "DAY", "value": "FRI", "pattern": "(?:V|Vie|viernes)" },
+    { "language": "es", "type": "DAY", "value": "SAT", "pattern": "(?:S|Sáb|sábado)" },
+    { "language": "es", "type": "DAY", "value": "SUN", "pattern": "(?:D|Dom|domingo)" },
+     
+    { "language": "fr", "type": "DAY", "value": "MON", "pattern": "lun(?:\\.|di)?" },      // lun | lun. | lundi
+    { "language": "fr", "type": "DAY", "value": "TUE", "pattern": "mar(?:\\.|di)?" },      // mar | mar. | mardi
+    { "language": "fr", "type": "DAY", "value": "WED", "pattern": "mer(?:\\.|credi)?" },   // mer | mer. | mercredi
+    { "language": "fr", "type": "DAY", "value": "THU", "pattern": "jeu(?:\\.|di)?" },      // jeu | jeu. | jeudi
+    { "language": "fr", "type": "DAY", "value": "FRI", "pattern": "ven(?:\\.|dredi)?" },   // ven | ven. | vendredi
+    { "language": "fr", "type": "DAY", "value": "SAT", "pattern": "sam(?:\\.|edi)?" },     // sam | sam. | samedi
+    { "language": "fr", "type": "DAY", "value": "SUN", "pattern": "dim(?:\\.|anche)" },    // dim | dim. | dimanche
+  
+    { "language": "it", "type": "DAY", "value": "MON", "pattern": "lun(?:\\.|edì)?" },
+    { "language": "it", "type": "DAY", "value": "TUE", "pattern": "mar(?:\\.|tedì)?" },
+    { "language": "it", "type": "DAY", "value": "WED", "pattern": "mer(?:\\.|coledì)?" },
+    { "language": "it", "type": "DAY", "value": "THU", "pattern": "gio(?:\\.|vedì)?" },
+    { "language": "it", "type": "DAY", "value": "FRI", "pattern": "ven(?:\\.|erdì)?" },
+    { "language": "it", "type": "DAY", "value": "SAT", "pattern": "sab(?:\\.|ato)?" },
+    { "language": "it", "type": "DAY", "value": "SUN", "pattern": "do(?:\\.|menica)?" },
+
+    { "language": "nl", "type": "DAY", "value": "MON", "pattern": "ma(?:\\.|andag)?" },
+    { "language": "nl", "type": "DAY", "value": "TUE", "pattern": "di(?:\\.|nsdag)?" },
+    { "language": "nl", "type": "DAY", "value": "WED", "pattern": "woe(?:\\.|nsdag)?" },
+    { "language": "nl", "type": "DAY", "value": "THU", "pattern": "don(?:\\.|derdag)?" },
+    { "language": "nl", "type": "DAY", "value": "FRI", "pattern": "vrij(?:\\.|dag)?" },
+    { "language": "nl", "type": "DAY", "value": "SAT", "pattern": "zat(?:\\.|erdag)?" },
+    { "language": "nl", "type": "DAY", "value": "SUN", "pattern": "zon(?:\\.|dag)?" },
+
+    { "language": "sv", "type": "DAY", "value": "MON", "pattern": "Mån(?:\\.|dag)?" },
+    { "language": "sv", "type": "DAY", "value": "TUE", "pattern": "Tis(?:\\.|dag)?" },
+    { "language": "sv", "type": "DAY", "value": "WED", "pattern": "Ons(?:\\.|dag)?" },
+    { "language": "sv", "type": "DAY", "value": "THU", "pattern": "Tors(?:\\.|dag)?" },
+    { "language": "sv", "type": "DAY", "value": "FRI", "pattern": "Fre(?:\\.|dag)?" },
+    { "language": "sv", "type": "DAY", "value": "SAT", "pattern": "Lör(?:\\.|dag)?" },
+    { "language": "sv", "type": "DAY", "value": "SUN", "pattern": "Sön(?:\\.|dag)?" }
+]

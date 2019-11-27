@@ -1,0 +1,42 @@
+﻿[
+    { "language": "cy", "value": "SPRING", "pattern": "(?:g|ng)?wanwyn" },
+    { "language": "cy", "value": "SUMMER", "pattern": "haf" },
+    { "language": "cy", "value": "AUTUMN", "pattern": "hydref" },
+    { "language": "cy", "value": "WINTER", "pattern": "(?:c|g|ng|ch|ngh)?aeaf" },
+
+    { "language": "de", "value": "SPRING", "pattern": "Frühling" },
+    { "language": "de", "value": "SUMMER", "pattern": "Sommer" },
+    { "language": "de", "value": "AUTUMN", "pattern": "Herbst" },
+    { "language": "de", "value": "WINTER", "pattern": "Winter" },
+
+    { "language": "en", "value": "SPRING", "pattern": "Spring" },
+    { "language": "en", "value": "SUMMER", "pattern": "Summer" },
+    { "language": "en", "value": "AUTUMN", "pattern": "Autumn" },
+    { "language": "en", "value": "WINTER", "pattern": "(?:Winter|Fall)" },
+
+    { "language": "es", "value": "SPRING", "pattern": "Primavera" },
+    { "language": "es", "value": "SUMMER", "pattern": "Verano" },
+    { "language": "es", "value": "AUTUMN", "pattern": "Otoño" },
+    { "language": "es", "value": "WINTER", "pattern": "Invierno" },
+    
+    { "language": "fr", "value": "SPRING", "pattern": "printemps" },
+    { "language": "fr", "value": "SUMMER", "pattern": "été" },
+    { "language": "fr", "value": "AUTUMN", "pattern": "automne" },
+    { "language": "fr", "value": "WINTER", "pattern": "hiver" },
+
+    { "language": "it", "value": "SPRING", "pattern": "Primavera" },
+    { "language": "it", "value": "SUMMER", "pattern": "Estate" },
+    { "language": "it", "value": "AUTUMN", "pattern": "Autunno" },
+    { "language": "it", "value": "WINTER", "pattern": "Inverno" },
+
+    { "language": "nl", "value": "SPRING", "pattern": "De lente" },
+    { "language": "nl", "value": "SUMMER", "pattern": "Zomer" },
+    { "language": "nl", "value": "AUTUMN", "pattern": "Herfst" },
+    { "language": "nl", "value": "WINTER", "pattern": "Winter" },
+
+    { "language": "sv", "value": "SPRING", "pattern": "Vår" },
+    { "language": "sv", "value": "SUMMER", "pattern": "Sommar" },
+    { "language": "sv", "value": "AUTUMN", "pattern": "Höst" },
+    { "language": "sv", "value": "WINTER", "pattern": "Vintern\\?" }
+]
+ 

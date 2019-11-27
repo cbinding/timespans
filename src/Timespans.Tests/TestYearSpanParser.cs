@@ -403,6 +403,14 @@ namespace TimespanLib
         }
 
         [TestMethod]
+        public void TestFromYearToYearAD2()
+        {
+            string input = @"C. 1521 to 1585";
+            IYearSpan expected = new YearSpan(1521, 1585, input);
+            compare(input, expected, EnumLanguage.EN);
+        }
+
+        [TestMethod]
         public void TestFromYearToYearBC()
         {
             string input = @"C. 1585-1521 BC";
