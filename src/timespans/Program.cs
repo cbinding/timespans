@@ -73,14 +73,17 @@ namespace timespans
                 // do the processing
                 foreach (string line in System.IO.File.ReadLines(iFileName))
                 {
-                    IYearSpan result = YearSpan.Parse(line, language);
-                    
-                    outputLines.Add(String.Format("{1}{0}{2}{0}{3}",
-                        delimiter,
-                        result.label.Replace(delimiter, ' '),
-                        result.min,
-                        result.max
-                    ));
+                    if (line.Trim().Length > 0)
+                    {
+                        IYearSpan result = YearSpan.Parse(line, language);
+
+                        outputLines.Add(String.Format("{1}{0}{2}{0}{3}",
+                            delimiter,
+                            result.label.Replace(delimiter, ' '),
+                            result.min.ToString("D4"),
+                            result.max.ToString("D4")
+                        ));
+                    }
                 }                
                 
                 // Write how long the process took
