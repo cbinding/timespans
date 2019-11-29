@@ -6,7 +6,7 @@ Archaeological dataset records often give a textual expression of dating rather 
 | Type | Language | Input | Min | Max |
 |------|----------|-------|-----|-----|
 | Ordinal named or numbered century | English | Early 2nd Century | 101 | 140 |
-| | English | Circa Fifth Century BC | -200 | -101 |
+| | English | Circa Second Century BC | -200 | -101 |
 | | Italian | XV secolo d.C. | 1401 | 1500 |
 | | Italian | intorno a VI sec. d.C. | 501 | 600 |
 | | Welsh | pymthegfed ganrif | 1401 | 1500 |  
