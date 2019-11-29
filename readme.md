@@ -54,7 +54,7 @@ In the case of decades, centuries or stated tolerances, an offset is added or su
 For matches on known named periods (e.g. Georgian, Victorian etc.) the start/end years are derived from suitable authority list lookups. 
 
 ## Usage ##
-Command: timespans -i:{inputFileName} [-o:{outputFileName}] [-l:{languageCode}] 
+Command: `timespans -i:{inputFileName} [-o:{outputFileName}] [-l:{languageCode}]` 
 
 ### Input File Name (required) ###
 The name (including path) of a text file containing a list of the timespan expressions to be matched, one per line. The matching patterns used are case insensitive. If no match is found then a result is still returned, having blank dates - indicating no appropriate match.
