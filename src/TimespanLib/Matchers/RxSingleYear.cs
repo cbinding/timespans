@@ -42,6 +42,7 @@ namespace TimespanLib.Rx
                         maybe(DateCirca.Pattern(language)),                         // (?:C(?:\.|irca)|around|approx(?:\.|imately)?)?
                         maybe(SPACE),                                               // (?:\s)?
                         oneof(new string[]{
+                            group(@"[+-]?\d+", "year"),
                             String.Concat(
                                 group(@"\d+", "year"),                              // (?<year>\d+)
                                 maybe(oneof(new string[]{@"\+", @"\?"})),           // approximation indicator                                

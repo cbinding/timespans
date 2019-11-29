@@ -79,11 +79,12 @@ namespace TimespanLib.Rx
                 }
                 default:
                 {
-                    // ^(?:c(?:\.|irca)?)?\s*(?<yearMin>\d{1,})(?:\s*(?:[;\-\/]|to)\s*)(?<yearMax>\d{2,})\s*(?<suffix>AD|BC|CE|BP)?\s*\??$
+                    // ^(?:c(?:\.|irca)?)?\s*(?<yearMin>\d+)(?:\s*(?:[;\-\/]|to)\s*)(?<yearMax>\d+)\s*(?<suffix>AD|BC|CE|BP)?\s*\??$
                     pattern = String.Concat(
                         START,       
                         maybe(DateCirca.Pattern(language) + maybe(SPACE)),
                         oneof(new string[]{
+                            group(@"[+-]?\d+", "yearMin"),
                             String.Concat(
                                 maybe(oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix1")),
                                 maybe(SPACE),
@@ -97,6 +98,7 @@ namespace TimespanLib.Rx
                        }),
                        @"\s*(?:[\;\-\/]|to)\s*", // separators
                        oneof(new string[]{
+                            group(@"[+-]?\d+", "yearMax"),
                             String.Concat(
                                 maybe(oneof(Lookup<EnumDateSuffix>.Patterns(language), "suffix2")),
                                 maybe(SPACE),

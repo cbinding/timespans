@@ -150,10 +150,10 @@ namespace TimespanLib
         }
 
         [TestMethod]
-        public void TestNonMatchReturnsZero()
+        public void TestNonMatchReturnsMaxInt()
         {
             string input = @"abc/xyz";
-            IYearSpan expected = new YearSpan(0, input);
+            IYearSpan expected = new YearSpan(int.MaxValue, input);
             compare(input, expected, EnumLanguage.EN);            
         }
 

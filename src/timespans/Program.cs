@@ -80,8 +80,8 @@ namespace timespans
                         outputLines.Add(String.Format("{1}{0}{2}{0}{3}",
                             delimiter,
                             result.label.Replace(delimiter, ' '),
-                            result.min.ToString("D4"),
-                            result.max.ToString("D4")
+                            result.min == int.MaxValue ? "" : result.min.ToString("+0000;-0000"),
+                            result.max == int.MaxValue ? "" : result.max.ToString("+0000;-0000")
                         ));
                     }
                 }                

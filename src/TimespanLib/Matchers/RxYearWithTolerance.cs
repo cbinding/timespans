@@ -21,7 +21,7 @@ namespace TimespanLib.Rx
                 String.Concat(
                     START,                                               
                     maybe(DateCirca.Pattern(language) + SPACE),        
-                    group(@"\d+", "year"),
+                    group(@"[+-]?\d+", "year"),
                     @"\s*\±\s*",
                     group(@"\d+", "tolerance"), 
                     END
@@ -29,7 +29,7 @@ namespace TimespanLib.Rx
                 String.Concat(
                     START,                                               
                     maybe(DateCirca.Pattern(language) + SPACE),        
-                    group(@"\d+", "year"),
+                    group(@"[+-]?\d+", "year"),
                     maybe(SPACE),
                     group(@"[+-]\d+", "tolerance1"), 
                     maybe(SPACE),
@@ -39,7 +39,7 @@ namespace TimespanLib.Rx
                 String.Concat(
                     START,                                               
                     maybe(DateCirca.Pattern(language) + SPACE),        
-                    group(@"\d+", "year"),
+                    group(@"[+-]?\d+", "year"),
                     maybe(SPACE),
                     group(@"[+-]\d+", "tolerance"),                 
                     END
@@ -67,7 +67,7 @@ namespace TimespanLib.Rx
             pattern = String.Concat(
                 START,                                               
                 maybe(DateCirca.Pattern(language) + SPACE),        
-                group(@"\d+", "year"),
+                group(@"[+-]?\d+", "year"),
                 @"\s*\±\s*",
                 group(@"\d+", "tolerance"), 
                 END
@@ -87,7 +87,7 @@ namespace TimespanLib.Rx
             pattern = String.Concat(
                 START,                                               
                 maybe(DateCirca.Pattern(language) + SPACE),        
-                group(@"\d+", "year"),
+                group(@"[+-]?\d+", "year"),
                 maybe(SPACE),
                 group(@"[+-]\d+", "tolerance1"), 
                 maybe(SPACE),
