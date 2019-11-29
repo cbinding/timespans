@@ -32,7 +32,7 @@ Archaeological dataset records often give a textual expression of dating rather 
 | Named periods (from lookup) | English | Georgian | 1714 | 1837 |
 | | English | Victorian | 1837 | 1901 |
 		
-Normalising this data can make later search and comparison of the records easier. We can do this by supplementing the original values with additional attributes defining the start and end dates of the timespan. This application attempts to match a set of textual values representing timespans to a number of known patterns, and from there to derive the intended start/end dates of the timespan. For some cases the start/end dates are present and can be extracted directly from the textual string, however in most cases a degree of additional processing is required after the initial pattern match is made. The output facilitates the fairer comparison of textual date spans as often expressed in datasets. Due to the wide variety of formats possible (including punctuation and spurious extra text), the matching patterns developed cannot comprehensively cater for every possible free-text variation present, so any remaining records not processed by this initial automated method (start/end years are zero) can be manually reviewed and assigned suitable start/end dates.
+Normalising this data can make later search and comparison of the records easier. We can do this by supplementing the original values with additional attributes defining the start and end dates of the timespan. This application attempts to match a set of textual values representing timespans to a number of known patterns, and from there to derive the intended start/end dates of the timespan. For some cases the start/end dates are present and can be extracted directly from the textual string, however in most cases a degree of additional processing is required after the initial pattern match is made. The output facilitates the fairer comparison of textual date spans as often expressed in datasets. Due to the wide variety of formats possible (including punctuation and spurious extra text), the matching patterns developed cannot comprehensively cater for every possible free-text variation present, so any remaining records not processed by this initial automated method (start/end years are blank) can be manually reviewed and assigned suitable start/end dates.
 
 ## Issues to note ##
 The output dates produced are relative to Common Era (CE). Centuries are set to start at year 1 and end at year 100. Prefix modifiers for centuries take the following meaning in this application:
@@ -57,7 +57,7 @@ For matches on known named periods (e.g. Georgian, Victorian etc.) the start/end
 Command: timespans -i:{inputFileName} [-o:{outputFileName}] [-l:{languageCode}] 
 
 ### Input File Name (required) ###
-The name (including path) of a text file containing a list of the timespan expressions to be matched, one per line. The matching patterns used are case insensitive. If no match is found then a result is still returned, having zero dates - indicating no appropriate match.
+The name (including path) of a text file containing a list of the timespan expressions to be matched, one per line. The matching patterns used are case insensitive. If no match is found then a result is still returned, having blank dates - indicating no appropriate match.
 
 ### Output File Name (optional) ###
 The name (including path) of a text file to write the output to. If this file is not present it will be created, otherwise it will be overwritten. If this parameter is not present then the file name used will be the input file name appended with ".out.txt"
@@ -81,14 +81,14 @@ c.1521
 Early 2nd Century
 ```
 
-myoutput.txt: The output is a tab delimited text file with dates assigned to the timespan values
+myoutput.txt: The output is a tab delimited text file with years (in ISO 8601 format) assigned to the timespan values
 
 | Text Value | Min year | Max year |
 |------------|----------|----------|
-| 1839-1895 | 1839 | 1895 |
-| 1839-75 | 1839 | 1875 |
-| c.1521 | 1521 | 1521 |
-| Early 2nd Century | 101 | 140 |
+| 1839-1895 | +1839 | +1895 |
+| 1839-75 | +1839 | +1875 |
+| c.1521 | +1521 | +1521 |
+| Early 2nd Century | +0101 | +0140 |
 
 #### Italian examples: ####
 Command: `timespans -i:myinput.txt -o:myoutput.txt -l:it`
@@ -106,11 +106,11 @@ myoutput.txt:
 
 | Text Value | Min year | Max year |
 |------------|----------|----------|
-| 140-144 d.C. | 140 | 144 |
-| III e lo II secolo a.C. | -300 | -101 |
-| intorno a VI sec. d.C. | 501 | 600 |
-| tra IV e III secolo a.C. | -400 | -201 |
-| 575-400 a.C. | -575 | -400 |
+| 140-144 d.C. | +0140 | +0144 |
+| III e lo II secolo a.C. | -0300 | -0101 |
+| intorno a VI sec. d.C. | +0501 | +0600 |
+| tra IV e III secolo a.C. | -0400 | -0201 |
+| 575-400 a.C. | -0575 | -0400 |
 
 
 
